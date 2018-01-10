@@ -269,7 +269,7 @@ bindsym $mod+r mode "resize"
 
 bar {
         output eDP-1
-        status_command /home/chocoelho/.config/i3/first.sh
+        status_command /home/chocoelho/.config/i3/main_display.sh
         separator_symbol ":|:"
         # font pango:Secret Service Typewriter 10
     	font pango:SF Slapstick Comic Shaded 9
@@ -307,7 +307,7 @@ bar {
 
 bar {
         output HDMI-1
-        status_command /home/chocoelho/.config/i3/second.sh
+        status_command /home/chocoelho/.config/i3/external_display.sh
         # status_command ~/.i3/mpd.sh
         # status_command i3block
         separator_symbol "|:|"

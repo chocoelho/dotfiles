@@ -1,6 +1,6 @@
 #!/bin/bash
 
-i3status --config ~/.config/i3/first.conf | while :
+i3status --config ~/.config/i3/external_display.conf | while :
 do
     read line
 
