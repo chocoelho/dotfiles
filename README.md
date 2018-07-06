@@ -3,10 +3,12 @@
 ## Tools used
 
 - tmux
-  - tmuxinator
+    - tmuxinator
 - vim
-  - vim-bootstrap
+    - vim-bootstrap
 - emacs
-  - spacemacs
+    - spacemacs
 - zsh
-  - oh-my-zsh
+    - oh-my-zsh
+- ctags
+    - universal-ctags
