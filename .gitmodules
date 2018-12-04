@@ -1,0 +1,3 @@
+[submodule "i3/i3spotifystatus"]
+	path = i3/i3spotifystatus
+	url = git@github.com:rpieja/i3spotifystatus.git
