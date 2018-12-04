@@ -148,14 +148,14 @@ bindsym XF86AudioPrev exec playerctl previous
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
+set $ws1 1:
+set $ws2 2:
+set $ws3 3:
+set $ws4 4:
+set $ws5 5:
+set $ws6 6:
+set $ws7 7:
+set $ws8 8:
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -189,18 +189,20 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
+assign [class="Sublime_text"] $ws1
 assign [class="Google-chrome-unstable"] $ws2
 for_window [class="Spotify"] move to workspace $ws3
 assign [class="Slack"] $ws4
+assign [class="discord"] $ws4
+assign [class="irccloud"] $ws4
+assign [class="TelegramDesktop"] $ws4
 assign [class="Nautilus"] $ws5
-assign [class="TelegramDesktop"] $ws6
 # for_window [class="Kodi"] move to workspace $ws7
-assign [class="Steam"] $ws7
+# assign [class="Steam"] $ws7
 # assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
 for_window [class="Gnome-terminal"] floating enable
-for_window [class="Gnome-terminal" title="Code"] floating disable, move to workspace $ws1
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -330,7 +332,7 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar -t
-	status_command i3status | ~/.i3/i3spotifystatus/pystatus.py
+	status_command i3status | /home/chocoelho/.i3/i3spotifystatus/pystatus.py
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
