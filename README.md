@@ -1,11 +1,15 @@
 # My dotfiles
 
+This is my very personal dotfiles configuration.
+Anything in here is only supported to work on my machines.
+Use at your own risk.
+
 ## My stack
 
-### Tmux
+### tmux
 - [tpm](https://github.com/tmux-plugins/tpm)
 
-### Emacs
+### emacs
 - [Doom Emacs](https://github.com/hlissner/doom-emacs)
 
 ### zsh
