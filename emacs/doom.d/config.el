@@ -54,7 +54,7 @@
 ;; they are implemented.
 
 ;; Define where projectile should look for projects
-(setq projectile-project-search-path '("~/src"))
+(setq projectile-project-search-path '(("~/src" . 2)))
 
 (defun doom-dashboard-draw-custom-ascii-banner-fn ()
   (let* ((banner
