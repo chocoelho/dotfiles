@@ -76,3 +76,4 @@
 (push 'doom-dashboard-draw-custom-ascii-banner-fn +doom-dashboard-functions)
 
 (global-wakatime-mode)
+(flycheck-prospector-setup)
