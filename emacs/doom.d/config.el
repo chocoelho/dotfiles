@@ -113,3 +113,15 @@
   ;; activate mouse-based scrolling
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
+
+;; sourcery-cli
+(after! lsp-mode
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection '("/usr/local/bin/sourcery" "lsp"))
+                    :initialization-options '((token . "<TOKEN>")
+                                              (extension_version . "emacs-lsp")
+                                              (editor_version . "emacs"))
+                    :activation-fn (lsp-activate-on "python")
+                    :server-id 'sourcery
+                    :add-on? t
+                    :priority 2)))
