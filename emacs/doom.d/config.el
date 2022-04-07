@@ -80,3 +80,28 @@
 (add-to-list 'company-mode #'company-tabine)
 (setq company-idle-delay 0)
 (setq company-show-numbers t)
+
+; wsl-copy
+(defun wsl-copy (start end)
+  (interactive "r")
+  (shell-command-on-region start end "clip.exe")
+  (deactivate-mark))
+
+; wsl-paste
+(defun wsl-paste ()
+  (interactive)
+  (let ((clipboard
+     (shell-command-to-string "powershell.exe -command 'Get-Clipboard' 2> /dev/null")))
+    (setq clipboard (replace-regexp-in-string "\r" "" clipboard)) ; Remove Windows ^M characters
+    (setq clipboard (substring clipboard 0 -1)) ; Remove newline added by Powershell
+    (insert clipboard)))
+
+; Bind wsl-copy to C-c C-v
+(global-set-key
+ (kbd "C-c f c")
+ 'wsl-copy)
+
+; Bind wsl-paste to C-c C-v
+(global-set-key
+ (kbd "C-c f v")
+ 'wsl-paste)
