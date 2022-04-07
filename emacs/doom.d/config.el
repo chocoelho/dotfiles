@@ -4,7 +4,8 @@
 ;; sync' after modifying this file!
 (use-package wakatime-mode
   :ensure t)
-
+(use-package company-tabnine
+  :ensure t)
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "<NAME>"
@@ -76,3 +77,6 @@
 
 (global-wakatime-mode)
 (flycheck-prospector-setup)
+(add-to-list 'company-mode #'company-tabine)
+(setq company-idle-delay 0)
+(setq company-show-numbers t)
