@@ -106,6 +106,8 @@
  (kbd "C-c f v")
  'wsl-paste)
 
+(setq wakatime-cli-path "/usr/local/bin/wakatime")
+
 (xterm-mouse-mode 1)
 (unless (display-graphic-p)
   ;; activate mouse-based scrolling
