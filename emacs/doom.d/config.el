@@ -2,8 +2,6 @@
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
-(use-package wakatime-mode
-  :ensure t)
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "<NAME>"
@@ -113,7 +111,14 @@
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
-;; sourcery-cli
+;; wakatime config
+(use-package wakatime-mode
+  :diminish 'wakatime-mode
+  :init
+  (add-hook 'prog-mode-hook 'wakatime-mode)
+  :config (progn (setq wakatime-cli-path "/usr/local/bin/wakatime")
+                 (setq wakatime-python-bin nil)
+                 (global-wakatime-mode)))
 (after! lsp-mode
   (lsp-register-client
    (make-lsp-client :new-connection (lsp-stdio-connection '("/usr/local/bin/sourcery" "lsp"))
