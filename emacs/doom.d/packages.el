@@ -11,6 +11,7 @@
 (package! wakatime-mode)
 (package! flycheck-prospector)
 (package! company-tabnine :recipe (:host github :repo "TommyX12/company-tabnine"))
+(package! lsp-sonarlint)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:

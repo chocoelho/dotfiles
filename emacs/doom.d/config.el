@@ -88,11 +88,9 @@
  (kbd "C-c f v")
  'wsl-paste)
 
-(setq wakatime-cli-path "/usr/local/bin/wakatime")
-
+;; enable mouse usage
 (xterm-mouse-mode 1)
 (unless (display-graphic-p)
-  ;; activate mouse-based scrolling
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
@@ -104,6 +102,8 @@
   :config (progn (setq wakatime-cli-path "/usr/local/bin/wakatime")
                  (setq wakatime-python-bin nil)
                  (global-wakatime-mode)))
+
+;; lsp config
 (after! lsp-mode
   (lsp-register-client
    (make-lsp-client :new-connection (lsp-stdio-connection '("/usr/local/bin/sourcery" "lsp"))
@@ -113,4 +113,9 @@
                     :activation-fn (lsp-activate-on "python")
                     :server-id 'sourcery
                     :add-on? t
-                    :priority 2)))
+                    :priority 2))
+  (require 'lsp-sonarlint)
+  (require 'lsp-sonarlint-javascript)
+  (setq lsp-sonarlint-javascript-enabled t)
+  (require 'lsp-sonarlint-python)
+  (setq lsp-sonarlint-python-enabled t))
