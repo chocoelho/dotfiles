@@ -55,10 +55,15 @@
 
 ;; prospector linting
 (flycheck-prospector-setup)
-(setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
+
+;; tabnine completion
 (after! company
-  (setq company-idle-delay 0
-        company-show-numbers t))
+  (require 'company-tabnine)
+  (setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
+  (setq company-idle-delay 0)
+  (setq company-show-numbers t))
+
+(add-to-list 'company-backends #'company-tabnine)
 
 ; wsl-copy
 (defun wsl-copy (start end)

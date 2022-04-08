@@ -10,7 +10,7 @@
 ;(package! some-package)
 (package! wakatime-mode)
 (package! flycheck-prospector)
-(package! company-tabnine)
+(package! company-tabnine :recipe (:host github :repo "TommyX12/company-tabnine"))
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
